@@ -3,21 +3,24 @@
         <div class="card-image" :style="`background-image: url(${imageUrl})`">
             <slot></slot>
         </div>
-        <p>Save Icon</p>
+        <p>{{ breed }}</p>
+        <!-- <p>Save Icon</p> -->
     </div>
 </template>
-
 <script>
 export default {
   props: {
     imageUrl: {
       type: String,
       required: true
+    },
+    breed: {
+        type: String,
+        required: true
     }
   }
 };
 </script>
-
 <style scoped>
 .card-container {
   background-color: rgb(202, 201, 201);
