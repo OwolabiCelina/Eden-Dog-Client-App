@@ -7,7 +7,7 @@
         <p v-if="NotFound" class="error-404">No Breed Found</p>
       </div>
       <div class="card-row">
-        <DogCard v-for="dog of dogs" :key="dog" :image-url="dog" @click="getMoreInformation(dog.id)" :breed="dog.split('/')[4]">
+        <DogCard v-for="dog of dogs" :key="dog" :image-url="dog" @click="getMoreInformation(dog)" :breed="dog.split('/')[4]">
         </DogCard>
       </div>
     </div>
@@ -56,7 +56,7 @@
       },
   
       getMoreInformation(id){
-        this.$router.push(`/dog/${id}`)
+        this.$router.push({ name: 'AboutDog', params: { id: id } })
       }
   
     },
